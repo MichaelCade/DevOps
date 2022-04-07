@@ -29,7 +29,7 @@ jobs:
       with:
         # Your dev.to personal API key to publish and update articles.
         # See https://docs.dev.to/api/#section/Authentication/api_key
-        devto_key: ${{ secrets.DEV_TO_API_KEY }}
+        devto_key: ${{ secrets.DEVTO_TOKEN }}
         # Your GitHub personal access token, used to create commits for updated files.
         # If you have a protected branch, you need to use a personal access token
         # with the 'repo' permission.
