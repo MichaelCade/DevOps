@@ -27,7 +27,7 @@ jobs:
           docker run ghcr.io/jimbobbennett/auto-blog-poster:main 
           --env DEV_TO_API_KEY=${{ secrets.DEVTO_API_TOKEN }}
           GITHUB_ACCESS_TOKEN=${{ secrets.GITHUB_TOKEN }}
-          REPO=michaelcade/devops
+          REPO=${{ github.repository }}
           
 
   # post_job:
