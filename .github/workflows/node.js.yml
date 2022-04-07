@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install --pure-lockfile
-      - run: DEV_TO=${{secrets.DEV_TO}} yarn run publish:post
+      - run: DEV_TO=${{secrets.DEVTO_API_TOKEN}} yarn run publish:post
       - run: |
           git config user.name michaelcade
           git config user.email michael.cade@outlook.com
