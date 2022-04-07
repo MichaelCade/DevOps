@@ -22,13 +22,11 @@ jobs:
           SKIP_LOGIN: true
 
       - run: docker pull ghcr.io/jimbobbennett/auto-blog-poster:main
-
+      
+      - name: Deploy to Dev.to
+        uses: jimbobbennett/auto-blog-poster@main
       - run: >
           docker run ghcr.io/jimbobbennett/auto-blog-poster:main 
           --env DEV_TO_API_KEY=${{ secrets.DEV_TO_API_KEY }}
           GITHUB_ACCESS_TOKEN=${{ secrets.GITHUB_TOKEN }}
           REPO=${{ github.repository }}
-          
-
-      - name: Deploy to Dev.to
-        uses: jimbobbennett/auto-blog-poster@main
