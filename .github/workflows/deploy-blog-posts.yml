@@ -1,0 +1,30 @@
+on: [push]
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Log in to the Container registry
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+    
+      - name: Use Docker CLI
+        uses: actions-hub/docker/cli@master
+        env:
+          SKIP_LOGIN: true
+
+      - run: docker pull ghcr.io/jimbobbennett/auto-blog-poster:main
+
+      - run: >
+          docker run ghcr.io/jimbobbennett/auto-blog-poster:main 
+          --env DEV_TO_API_KEY=${{ secrets.DEVTO_API_TOKEN }}
+          GITHUB_ACCESS_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          REPO=${{ github.repository }}
