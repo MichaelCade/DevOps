@@ -2,7 +2,7 @@ name: Publish
 # Only trigger this workflow on master, and a feature branch specifically for testing the workflow.
 on:
   push:
-    branches: [ master, ci-action ]
+    branches: [ main ]
 
 jobs:
   build:
