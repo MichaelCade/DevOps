@@ -2,7 +2,7 @@
 title: "#90DaysOfDevOps - Application Focused"
 published: false
 description: 90DaysOfDevOps - Application Focused
-tags: 'devops, 90daysofdevops, learning'
+tags: "devops, 90daysofdevops, learning"
 cover_image: null
 canonical_url: null
 ---
